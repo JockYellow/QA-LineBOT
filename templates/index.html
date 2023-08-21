@@ -9,15 +9,36 @@
         <input type="text" name="keyword" placeholder="Enter keyword">
         <button type="submit">Search</button>
     </form>
+    </div>
+    {% if question %}
+    <p>{{ question }}</p>
+    {% endif %}
+</body>
+<!-- <body>
+    <h1>Keyword Search</h1>
+    <form method="post" action="/search">
+        <input type="text" name="keyword" placeholder="Enter keyword">
+        <button type="submit">Search</button>
+    </form>
     
     <div id="searchResults">
-        {% if results %}
-        <ul>
-            {% for result in results %}
-            <li>{{ result }}</li>
-            {% endfor %}
-        </ul>
+        {% if question %}
+        <div style="border: 1px solid black; padding: 10px;">
+            <p><strong>Question:</strong> {{ question.question }}</p>
+            <p><strong>Options:</strong></p>
+            <ul>
+                {% for option, text in question.options.items() %}
+                <li>{{ option }}: {{ text }}</li>
+                {% endfor %}
+            </ul>
+            <p><strong>Answer:</strong> {{ question.answer }}</p>
+        </div>
         {% endif %}
     </div>
-</body>
+</body> -->
+
 </html>
+
+
+
+
